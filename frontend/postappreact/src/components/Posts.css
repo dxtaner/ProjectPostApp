@@ -1,0 +1,15 @@
+.card {
+    background-color:rgb(248, 245, 245);
+    border: 5px solid rgba(242, 242, 198, 0.986);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+}
+
+.card-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}

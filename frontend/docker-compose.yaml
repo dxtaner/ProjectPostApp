@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  db:
+    container_name: postapp
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: depixen-pass
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - "5439:5432"
+    volumes:
+      - depixen-volume:/var/lib/postgresql/data 
+    # initdb:
+    #   - /docker-entrypoint-initdb.d/init.sql
+  react-app:
+    container_name: react-postapp
+    build: 
+      context: ./postappreact
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+volumes:
+  depixen-volume:
