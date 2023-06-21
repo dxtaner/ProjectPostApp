@@ -8,8 +8,7 @@ Getting Started
 
 ### Prerequisites
 
-*   Node.js (version >= 12.0.0)
-*   npm (version >= 6.0.0)
+*   Docker
 
 ### Installation
 
@@ -23,20 +22,20 @@ Getting Started
     cd react-blog-app
     
 
-3.  Install the dependencies:
-
-    npm install
-    
-
 Usage
 -----
 
-1.  Start the development server:
+1.  Build the Docker image:
 
-    npm start
+    docker build -t react-blog-app .
     
 
-Open your browser and visit `http://localhost:3000` to access the application.
+2.  Run the Docker container:
+
+    docker run -p 3000:3000 react-blog-app
+    
+
+3.  Open your browser and visit `http://localhost:3000` to access the application.
 
 Features
 --------
